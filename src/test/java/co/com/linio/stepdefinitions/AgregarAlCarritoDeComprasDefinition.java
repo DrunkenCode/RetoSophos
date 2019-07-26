@@ -11,7 +11,10 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 
+import static co.com.linio.models.builders.ProductoBuilder.*;
+
 import co.com.linio.interactions.AbrirPagina;
+import co.com.linio.models.builders.ProductoBuilder;
 import co.com.linio.tasks.BuscarElProducto;
 import co.com.linio.tasks.SeleccionarProducto;
 
@@ -29,16 +32,16 @@ public class AgregarAlCarritoDeComprasDefinition {
 	public void queElUsuarioDeseaBuscarUn(String producto) {
 		theActorCalled("Certificador").attemptsTo(
 				AbrirPagina.paraComprar(),
-				BuscarElProducto.deseado(producto)
+				BuscarElProducto.deseado(producto().conNombre(producto))
 				);
 	}
 
 	@Cuando("el usuario agregue al carrito el (.*) especifico deseado con (.*)")
 	public void elUsuarioAgregueAlCarritoElEspecificoDeseadoCon(String producto, String precio) {
 		theActorInTheSpotlight().attemptsTo(
-				SeleccionarProducto.deseado()
+				SeleccionarProducto.deseado(producto().conNombre(producto)
+														.conPrecio(precio))
 				);
-		
 	}
 
 	@Cuando("confirme la adquisicion del producto")

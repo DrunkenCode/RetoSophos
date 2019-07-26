@@ -13,4 +13,4 @@ Característica: Agregar al carrito de compras en Linio.com
   
 	Ejemplos:
 	|	producto	| precio 	|
-  |	S10 Plus	|	2899	|
+  |	S10 Plus	|	2899.00	|

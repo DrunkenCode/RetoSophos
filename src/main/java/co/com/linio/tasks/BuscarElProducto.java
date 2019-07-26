@@ -8,13 +8,17 @@ import net.serenitybdd.screenplay.actions.Enter;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
+import co.com.linio.models.Producto;
+import co.com.linio.models.builders.ProductoBuilder;
+
 import static co.com.linio.userinterfaces.PaginaPrincipal.*;
 
 public class BuscarElProducto implements Task{
 	
 	static String strProducto;
 	
-	public BuscarElProducto() {
+	public BuscarElProducto(Producto productoM) {
+		strProducto = productoM.getNombre();
 	}
 
 	@Override
@@ -25,9 +29,8 @@ public class BuscarElProducto implements Task{
 				);
 	}
 	
-	public static Performable deseado(String producto) {
-		strProducto = producto;
-		return instrumented(BuscarElProducto.class);
+	public static Performable deseado(ProductoBuilder productoB) {
+		return instrumented(BuscarElProducto.class, productoB.build());
 	}
 
 }

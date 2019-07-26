@@ -27,7 +27,6 @@ public class SeleccionarProducto implements Task{
 				WaitUntil.the(LBL_TITULO.of(strPrecio.replace(",", ""), strNombre), isPresent()),
 				Click.on(LBL_TITULO.of(strPrecio.replace(",", ""), strNombre)));
 		strNombreCompleto = LBL_NOMBRE_PRODUCTO.resolveFor(actor).getText();
-		System.out.println(strNombreCompleto);
 		actor.attemptsTo(
 				WaitUntil.the(BTN_AGREGAR_AL_CARRITO, isPresent()),
 				Click.on(BTN_AGREGAR_AL_CARRITO),

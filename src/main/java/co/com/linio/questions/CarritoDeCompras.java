@@ -46,6 +46,12 @@ public class CarritoDeCompras implements Question<Boolean>{
 		return false;
 	}
 	
+	/**
+	 * Retorna la clase que valida el nombre del producto y los precios, retornando true o false.
+	 * @param productB Es el Builder del Producto.
+	 * @param parametro Es el elemento al cual se va validar
+	 * @return esta clase.
+	 */
 	public static CarritoDeCompras confirmacionDel(ProductoBuilder productB, String parametro) {
 		return new CarritoDeCompras(productB.build(), parametro);
 	}

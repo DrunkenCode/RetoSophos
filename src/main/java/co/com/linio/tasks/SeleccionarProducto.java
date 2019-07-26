@@ -36,6 +36,11 @@ public class SeleccionarProducto implements Task{
 				);
 	}
 
+	/**
+	 * Retorna la clase que selecciona el producto y lo agrega al carrito de comrpas.
+	 * @param productoB Es el Builder del Producto.
+	 * @return esta clase
+	 */
 	public static Performable deseado(ProductoBuilder productoB) {
 		return instrumented(SeleccionarProducto.class, productoB.build());
 	}

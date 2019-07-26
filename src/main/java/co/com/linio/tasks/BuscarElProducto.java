@@ -29,6 +29,11 @@ public class BuscarElProducto implements Task{
 				);
 	}
 	
+	/**
+	 * Retorna la clase que ingresa el producto a buscar y luego presiona en el boton buscar.
+	 * @param productoB Es el Builder del Producto.
+	 * @return Esta clase
+	 */
 	public static Performable deseado(ProductoBuilder productoB) {
 		return instrumented(BuscarElProducto.class, productoB.build());
 	}

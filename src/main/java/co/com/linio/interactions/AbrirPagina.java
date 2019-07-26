@@ -21,6 +21,10 @@ public class AbrirPagina implements Interaction {
         BrowseTheWeb.as(actor).getDriver().manage().window().maximize();
     }
 
+    /**
+     * Retorna el navegador y lo maximiza
+     * @return esta clase
+     */
     public static Performable paraComprar(){
         return instrumented(AbrirPagina.class);
     }

@@ -2,7 +2,11 @@ package co.com.linio.userinterfaces;
 
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.screenplay.targets.Target;
-
+/**
+ * Mapeo de los elementos usados en la pagina Principal
+ * @author Leider
+ *
+ */
 public class PaginaPrincipal extends PageObject{
 	public static final Target TXT_BUSCAR = Target.the("Ingresar el articujlo deseado").locatedBy("//div[@class='input-group hidden-sm-down input-group-search']//input[@name='q']");
 	public static final Target BTN_BUSCAR = Target.the("Boton de busqueda").locatedBy("//button[@class='btn btn-primary']");

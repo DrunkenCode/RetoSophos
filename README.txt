@@ -10,13 +10,6 @@ los principios SOLID, sin embargo las evidencias seran generadas por Serenity.
 
 PRE-REQUISITOS:
  - Se requiere Internet para descargar las librerias usadas con Gradle y la ejecucion de la automatizacion.
- - Se requiere, en al archivo "serenity.properties", el parametro "webdriver.chrome.driver"
-  debe ser cambiado por la ruta donde se tiene el archivo de ChromeDriver para ejecutar la automatizacion.
-
-
-IMPORTANTE:
-El proyecto fue desarrollado desde una maquina MacBook, por lo cual, para las pruebas del desarrollo descargué el ChromeDriver para Mac, el cual se encuentra adjunto al proyecto.
-Sí la ejecución se realizará desde una maquina Windows, debe descargarse el ChromeDriver correspondiente y modificar la ruta (Explicado en los PRE-REQUISITOS)
 
 
 VERSIONAMIENTO:

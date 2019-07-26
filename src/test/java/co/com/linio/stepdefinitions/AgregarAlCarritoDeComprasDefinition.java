@@ -12,14 +12,12 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 
 import static co.com.linio.models.builders.ProductoBuilder.*;
+import static co.com.linio.tasks.SeleccionarProducto.*;
 
 import co.com.linio.interactions.AbrirPagina;
-import co.com.linio.models.builders.ProductoBuilder;
+import co.com.linio.questions.CarritoDeCompras;
 import co.com.linio.tasks.BuscarElProducto;
 import co.com.linio.tasks.SeleccionarProducto;
-
-
-
 
 public class AgregarAlCarritoDeComprasDefinition {
 	
@@ -39,18 +37,23 @@ public class AgregarAlCarritoDeComprasDefinition {
 	@Cuando("el usuario agregue al carrito el (.*) especifico deseado con (.*)")
 	public void elUsuarioAgregueAlCarritoElEspecificoDeseadoCon(String producto, String precio) {
 		theActorInTheSpotlight().attemptsTo(
-				SeleccionarProducto.deseado(producto().conNombre(producto)
-														.conPrecio(precio))
+				SeleccionarProducto.deseado(producto()
+						.conNombre(producto)
+						.conPrecio(precio))
 				);
-	}
-
-	@Cuando("confirme la adquisicion del producto")
-	public void confirmeLaAdquisicionDelProducto() {
-		
 	}
 
 	@Entonces("validara que el producto fue agregado exitosamente")
 	public void validaraQueElProductoFueAgregadoExitosamente() {
-		
+		theActorInTheSpotlight().should(
+				seeThat(CarritoDeCompras.confirmacionDel(
+						producto().conNombre(strNombreCompleto),"Nombre")),
+				seeThat(CarritoDeCompras.confirmacionDel(
+						producto().conPrecio(strPrecio),"Precio")),
+				seeThat(CarritoDeCompras.confirmacionDel(
+						producto().conPrecio(strPrecio),"Subtotal")),
+				seeThat(CarritoDeCompras.confirmacionDel(
+						producto().conPrecio(strPrecio),"Total")
+				));
 	}
 }
